@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pose Estimation from Dexterous Touch</title>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Object Pose Estimation through Dexterous Touch</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href=""></a></span>
+          </div>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            This local website will provide supplementary materials showcasing agent exploration behaviors and training results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">with pose reward</h2>
+          <p>
+              The pose reward drives the agent to explore the object and improve pose estimation accuracy, measured by AUC of ADD-S.
+              As shown in the video, this helps the agent efficiently sample key features like edges and corners, achieving higher
+              AUC of <b>96.5%</b> in 11 steps while quickly targeting pre-defined boundaries.
+          </p>
+          <video id="ablation_tmbp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/ablation/TMBP.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="title is-3">without pose reward</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              Without the pose reward, the agent explores the object with the objective of maximizing the IoU.
+              As shown in the video, while the agent successfully samples a broad range of points on the object, it fails to target
+              critical pose-related features.
+              As a result, the agent takes 20 steps but only gets an AUC of <b>89.2%</b>.
+            </p>
+            <video id="ablation_tmb" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/ablation/TMB.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Training curves (Reward Ablation)</h2>
+        <!-- <div class="publication-video"> -->
+          <img src="./static/images/AUC_TMB_TMBP.svg">
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column content">
+        <p>
+          The figure above shows the training curves for AUC of ADD-S versus training steps for policies with different
+          reward
+          ablations, each trained for 300k steps with three seeds. <b>T</b> refers to the <b>T</b>actile reward, <b>M</b> to
+          the short <b>M</b>emory reward, <b>B</b>
+          to the curiosity <b>B</b>onus reward, and <b>P</b> to the <b>P</b>ose estimation reward.
+
+          As shown, TMBP outperforms other policies with lower variance in AUC of ADD-S, highlighting the effectiveness of
+          combining all rewards. Compared to TMB, TMBP achieves higher accuracy with less variance, demonstrating the value
+          of the
+          pose estimation reward. Similarly, TMBP surpasses TMP by efficiently exploring objects with the curiosity bonus,
+          and
+          outperforms TBP by avoiding revisited poses using the short memory reward.
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Training curves (State Representation Ablation)</h2>
+        <!-- <div class="publication-video"> -->
+          <img src="./static/images/IoU_TMBR.svg">
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column content">
+        <p>
+        </p>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column content">
+        <p>
+          The figure above shows the training curves for IoU versus training steps across policies with different state
+          representations. The unsmoothed data is shown in the background, appearing noisy as IoU is recorded per episode. <b>BFTRM</b>
+          represents <b>B</b>oundary distance, <b>F</b>inger joints, <b>T</b>ouch state, hand <b>R</b>otation, and local contact <b>M</b>emory in state representation.
+          
+          As shown, BFTRM consistently outperforms other policies after 50k steps, demonstrating the effectiveness of combining
+          all state representations. Comparing BFTRM with FTRM and BFTR highlights the importance of boundary distance and local
+          contact memory—boundary distance helps the agent localize its position, while local contact memory provides information
+          about the current sampled point cloud.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Test Objects Holding and Exploration</h2>
+    <div class="content has-text-justified">
+      Due to computational costs, pose estimation (AUC) is performed every 20 steps.
+      <div style="display: flex;">
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/sugar_box.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Sugar Box</p>
+        </div>
+        <div style="width: 4%;">
+        </div>
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/mug.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Mug</p>
+        </div>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <div style="display: flex;">
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/bleach_cleanser.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Bleach Cleanser</p>
+        </div>
+        <div style="width: 4%;">
+        </div>
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/chips.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Chips Can </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Training Objects Holding and Exploration</h2>
+    <div class="content has-text-justified">
+      Due to computational costs, pose estimation (AUC) is performed every 20 steps.
+
+      <div style="display: flex;">
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/smooth_box.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Cuboid</p>
+        </div>
+        <div style="width: 4%;">
+        </div>
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/long_cuboid.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Long Cuboid</p>
+        </div>
+      </div>
+    </div>
+    <div class="content has-text-justified">
+      <div style="display: flex;">
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/smooth_rec_box.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Rectangle Box</p>
+        </div>
+        <div style="width: 4%;">
+        </div>
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/long_cylinder_video.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Long Cylinder</p>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div style="width: 48%; text-align: center;">
+          <video poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/Ability/cylinder.mp4" type="video/mp4">
+          </video>
+          <p style="margin: 0;">Cylinder</p>
+        </div>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The license requires us to link back to the original website template. To comply with the double-blind review process,
+            this link is omitted here but will be included after the conference's final decision.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
