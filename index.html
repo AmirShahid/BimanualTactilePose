@@ -37,41 +37,57 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
-<body>
+<body style="background-color:  #E3E3E3;">
+<!--<nav class="navbar" role="navigation" aria-label="main navigation">-->
+<!--  <div class="navbar-brand">-->
+<!--    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">-->
+<!--      <span aria-hidden="true"></span>-->
+<!--      <span aria-hidden="true"></span>-->
+<!--      <span aria-hidden="true"></span>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--  <div class="navbar-menu">-->
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-
-  </div>
-</nav>
+<!--  </div>-->
+<!--</nav>-->
 
 
-<section class="hero">
+<section>
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">Object Pose Estimation through Dexterous Touch</h1>
           <div class="is-size-5 publication-authors">
+            <br>
             <span class="author-block">
-              <a href=""></a></span>
+              <a href="https://amirshahid.github.io">Amir-Hossein Shahidzadeh<sup>*,1</sup></a>,&nbsp;&nbsp;
+              <a href="https://jiyuezh.github.io/">Jiyue Zhu<sup>*,2</sup></a>,&nbsp;&nbsp;
+              <a href="https://jiyuezh.github.io/">Kezhou Chen<sup>2</sup></a>, &nbsp;&nbsp;
+              <a href="https://www.cs.cmu.edu/~shayi/">Sha Yi<sup>2</sup></a> <br>
+              <a href="http://www.cfar.umd.edu/~fer/">Cornelia Fermüller<sup>1</sup></a>, &nbsp;&nbsp;
+              <a href="http://www.cfar.umd.edu/~yiannis/">Yiannis Aloimonos<sup>1</sup></a>, &nbsp;&nbsp;
+              <a href="https://xiaolonw.github.io/">Xiaolong Wang<sup>2</sup></a>
+            </span>
           </div>
-
+          <br>
+<b><sup style="font-size: 18px;">1</sup> University of Maryland, &nbsp;
+          <sup style="font-size: 18px;">2</sup> UC San Diego</b>
           </div>
       </div>
     </div>
   </div>
 </section>
 
+<hr style="border: none; width: 60%; height: 4px; background: #aaa; margin: 24px auto;">
 
 <section class="section">
+  <div class="columns is-centered">
+    <img style="width: 50%" src="./static/images/teaser.svg">
+  </div>
+<br>
+<br>
+
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -79,7 +95,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This local website provides supplementary materials showcasing agent exploration behaviors for some of the test and training results.
+Robust object pose estimation is essential for manipulation and interaction tasks in robotics, particularly in scenarios where visual data is limited or sensitive to lighting, occlusions, and appearances. Tactile sensors often offer limited and local contact information, making it challenging to reconstruct the pose from partial data. Our approach uses sensorimotor exploration to actively control a robot hand to interact with the object. We train with Reinforcement Learning (RL) to explore and collect tactile data. The collected 3D point clouds are used to iteratively refine the object’s shape and pose. In our setup, one hand holds the object steady while the other performs active exploration. We show that our method can actively explore an object’s surface to identify critical pose features without prior knowledge of the object's geometry.
           </p>
         </div>
       </div>
@@ -130,6 +146,189 @@
   </div>
 </section>
 
+<hr style="border: none; width: 20%; height: 2px; background: #aaa; margin: 24px auto;">
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Unseen Objects Holding and Exploration</h2>
+    <p>"Due to the computational cost of the pose estimation metric (AUC), it is evaluated every 20 steps."</p>
+    <br>
+
+    <div class="columns is-centered">
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/duplo.mp4" type="video/mp4">
+        </video>
+        <p>Duplo</p>
+      </div>
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/jbl.mp4" type="video/mp4">
+        </video>
+        <p>Speaker</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/sugar_box.mp4" type="video/mp4">
+        </video>
+        <p>Sugar Box</p>
+      </div>
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/mug.mp4" type="video/mp4">
+        </video>
+        <p>Mug</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/bleach_cleanser.mp4" type="video/mp4">
+        </video>
+        <p>Bleach Cleanser</p>
+      </div>
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/chips.mp4" type="video/mp4">
+        </video>
+        <p>Chips Can</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/epson.mp4" type="video/mp4">
+        </video>
+        <p>Epson</p>
+      </div>
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/wood_block.mp4" type="video/mp4">
+        </video>
+        <p>Wood Block</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-two-fifths">
+        <video autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">
+          <source src="./static/videos/Ability/nesquik.mp4" type="video/mp4">
+        </video>
+        <p>Nesquik</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<hr style="border: none; width: 20%; height: 2px; background: #aaa; margin: 24px auto;">
+<div class="columns is-centered has-text-centered">
+  <div class="column is-four-fifths">
+    <h2 class="title is-3">Training Objects Holding and Exploration</h2>
+
+    <div style="display: flex; overflow-x: auto; gap: 40px; padding: 30px; scrollbar-width: thin; justify-content: flex-start;">
+      <div style="flex: 0 0 auto; text-align: center;">
+        <video poster="" autoplay controls muted loop playsinline
+               style="width: 480px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.35);">
+          <source src="./static/videos/Ability/smooth_box.mp4" type="video/mp4">
+        </video>
+        <p style="margin: 10px 0; font-size: 1.2em;">Cuboid</p>
+      </div>
+
+      <div style="flex: 0 0 auto; text-align: center;">
+        <video poster="" autoplay controls muted loop playsinline
+               style="width: 480px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.35);">
+          <source src="./static/videos/Ability/long_cuboid.mp4" type="video/mp4">
+        </video>
+        <p style="margin: 10px 0; font-size: 1.2em;">Long Cuboid</p>
+      </div>
+
+      <div style="flex: 0 0 auto; text-align: center;">
+        <video poster="" autoplay controls muted loop playsinline
+               style="width: 480px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.35);">
+          <source src="./static/videos/Ability/smooth_rec_box.mp4" type="video/mp4">
+        </video>
+        <p style="margin: 10px 0; font-size: 1.2em;">Rectangle Box</p>
+      </div>
+
+      <div style="flex: 0 0 auto; text-align: center;">
+        <video poster="" autoplay controls muted loop playsinline
+               style="width: 480px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.35);">
+          <source src="./static/videos/Ability/long_cylinder.mp4" type="video/mp4">
+        </video>
+        <p style="margin: 10px 0; font-size: 1.2em;">Long Cylinder</p>
+      </div>
+
+      <div style="flex: 0 0 auto; text-align: center;">
+        <video poster="" autoplay controls muted loop playsinline
+               style="width: 480px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.35);">
+          <source src="./static/videos/Ability/cylinder.mp4" type="video/mp4">
+        </video>
+        <p style="margin: 10px 0; font-size: 1.2em;">Cylinder</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="columns is-centered has-text-centered">-->
+<!--  <div class="column is-four-fifths">-->
+<!--    <h2 class="title is-3">Training Objects Holding and Exploration</h2>-->
+<!--    <div class="content has-text-justified">-->
+
+<!--      <div style="display: flex;">-->
+<!--        <div style="width: 48%; text-align: center;">-->
+<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
+<!--            <source src="./static/videos/Ability/smooth_box.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--          <p style="margin: 0;">Cuboid</p>-->
+<!--        </div>-->
+<!--        <div style="width: 4%;">-->
+<!--        </div>-->
+<!--        <div style="width: 48%; text-align: center;">-->
+<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
+<!--            <source src="./static/videos/Ability/long_cuboid.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--          <p style="margin: 0;">Long Cuboid</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="content has-text-justified">-->
+<!--      <div style="display: flex;">-->
+<!--        <div style="width: 48%; text-align: center;">-->
+<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
+<!--            <source src="./static/videos/Ability/smooth_rec_box.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--          <p style="margin: 0;">Rectangle Box</p>-->
+<!--        </div>-->
+<!--        <div style="width: 4%;">-->
+<!--        </div>-->
+<!--        <div style="width: 48%; text-align: center;">-->
+<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
+<!--            <source src="./static/videos/Ability/long_cylinder.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--          <p style="margin: 0;">Long Cylinder</p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div style="display: flex;">-->
+<!--        <div style="width: 48%; text-align: center;">-->
+<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
+<!--            <source src="./static/videos/Ability/cylinder.mp4" type="video/mp4">-->
+<!--          </video>-->
+<!--          <p style="margin: 0;">Cylinder</p>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -179,7 +378,7 @@
           The figure above shows the training curves for IoU versus training steps across policies with different state
           representations. The unsmoothed data is shown in the background, appearing noisy as IoU is recorded per episode. <b>BFTRM</b>
           represents <b>B</b>oundary distance, <b>F</b>inger joints, <b>T</b>ouch state, hand <b>R</b>otation, and local contact <b>M</b>emory in state representation.
-          
+
           As shown, BFTRM consistently outperforms other policies after 50k steps, demonstrating the effectiveness of combining
           all state representations. Comparing BFTRM with FTRM and BFTR highlights the importance of boundary distance and local
           contact memory—boundary distance helps the agent localize its position, while local contact memory provides information
@@ -190,104 +389,6 @@
   </div>
 </section>
 
-
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Test Objects Holding and Exploration</h2>
-    <div class="content has-text-justified">
-      Due to computational costs, pose estimation (AUC) is performed every 20 steps.
-      <div style="display: flex;">
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/sugar_box.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Sugar Box</p>
-        </div>
-        <div style="width: 4%;">
-        </div>
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/mug.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Mug</p>
-        </div>
-      </div>
-    </div>
-    <div class="content has-text-justified">
-      <div style="display: flex;">
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/bleach_cleanser.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Bleach Cleanser</p>
-        </div>
-        <div style="width: 4%;">
-        </div>
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/chips.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Chips Can </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div class="columns is-centered has-text-centered">
-  <div class="column is-four-fifths">
-    <h2 class="title is-3">Training Objects Holding and Exploration</h2>
-    <div class="content has-text-justified">
-      Due to computational costs, pose estimation (AUC) is performed every 20 steps.
-
-      <div style="display: flex;">
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/smooth_box.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Cuboid</p>
-        </div>
-        <div style="width: 4%;">
-        </div>
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/long_cuboid.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Long Cuboid</p>
-        </div>
-      </div>
-    </div>
-    <div class="content has-text-justified">
-      <div style="display: flex;">
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/smooth_rec_box.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Rectangle Box</p>
-        </div>
-        <div style="width: 4%;">
-        </div>
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/long_cylinder_video.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Long Cylinder</p>
-        </div>
-      </div>
-      <div style="display: flex;">
-        <div style="width: 48%; text-align: center;">
-          <video poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/Ability/cylinder.mp4" type="video/mp4">
-          </video>
-          <p style="margin: 0;">Cylinder</p>
-        </div>
-
-        </div>
-    </div>
-  </div>
-</div>
 
 
 
