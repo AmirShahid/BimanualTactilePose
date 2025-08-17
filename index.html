@@ -235,7 +235,17 @@ Robust object pose estimation is essential for manipulation and interaction task
   <div class="column is-four-fifths">
     <h2 class="title is-3">Training Objects Holding and Exploration</h2>
 
-    <div style="display: flex; overflow-x: auto; gap: 40px; padding: 30px; scrollbar-width: thin; justify-content: flex-start;">
+    <div style="
+      display: flex;
+      overflow-x: auto;
+      gap: 40px;
+      padding: 30px;
+      justify-content: flex-start;
+      scroll-behavior: smooth;
+      scrollbar-width: none;   /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+    " class="scroll-container">
+
       <div style="flex: 0 0 auto; text-align: center;">
         <video poster="" autoplay controls muted loop playsinline
                style="width: 480px; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.35);">
@@ -279,56 +289,12 @@ Robust object pose estimation is essential for manipulation and interaction task
   </div>
 </div>
 
-<!--<div class="columns is-centered has-text-centered">-->
-<!--  <div class="column is-four-fifths">-->
-<!--    <h2 class="title is-3">Training Objects Holding and Exploration</h2>-->
-<!--    <div class="content has-text-justified">-->
-
-<!--      <div style="display: flex;">-->
-<!--        <div style="width: 48%; text-align: center;">-->
-<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
-<!--            <source src="./static/videos/Ability/smooth_box.mp4" type="video/mp4">-->
-<!--          </video>-->
-<!--          <p style="margin: 0;">Cuboid</p>-->
-<!--        </div>-->
-<!--        <div style="width: 4%;">-->
-<!--        </div>-->
-<!--        <div style="width: 48%; text-align: center;">-->
-<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
-<!--            <source src="./static/videos/Ability/long_cuboid.mp4" type="video/mp4">-->
-<!--          </video>-->
-<!--          <p style="margin: 0;">Long Cuboid</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="content has-text-justified">-->
-<!--      <div style="display: flex;">-->
-<!--        <div style="width: 48%; text-align: center;">-->
-<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
-<!--            <source src="./static/videos/Ability/smooth_rec_box.mp4" type="video/mp4">-->
-<!--          </video>-->
-<!--          <p style="margin: 0;">Rectangle Box</p>-->
-<!--        </div>-->
-<!--        <div style="width: 4%;">-->
-<!--        </div>-->
-<!--        <div style="width: 48%; text-align: center;">-->
-<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
-<!--            <source src="./static/videos/Ability/long_cylinder.mp4" type="video/mp4">-->
-<!--          </video>-->
-<!--          <p style="margin: 0;">Long Cylinder</p>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div style="display: flex;">-->
-<!--        <div style="width: 48%; text-align: center;">-->
-<!--          <video poster="" autoplay controls muted loop playsinline style="box-shadow: 0 5px 5px rgba(0,0,0,0.2);">-->
-<!--            <source src="./static/videos/Ability/cylinder.mp4" type="video/mp4">-->
-<!--          </video>-->
-<!--          <p style="margin: 0;">Cylinder</p>-->
-<!--        </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<style>
+/* Hide scrollbar in Chrome, Safari, Edge */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+</style>
 
 <section class="section">
   <div class="container is-max-desktop">
